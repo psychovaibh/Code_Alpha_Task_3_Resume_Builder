@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {% block title %}
+    <title>Resume</title>
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-0">
+        <div class="container-fluid bg-secondary p-2">
+            <a class="navbar-brand" href="">Resume Builder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <!-- <a class="nav-link active" aria-current="page" href="/data/">Resume-Here</a> -->
+                    <a class="nav-link" href="/add/">Add Details</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    <div class="container-fluid">
+        <div class="mid-section">
+            <h5 class="bg-dark text-light text-center p-2"><span
+                    style="color: blueviolet; border-bottom: 2px solid blueviolet;">User</span> Resume</h5>
+        </div>
+        {% for i in data %}
+        <div class="mid-section container-fluid">
+            <h3><a href="/data/{{i.id}}/">{{i.id}} || {{i.name}}</a></h3>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

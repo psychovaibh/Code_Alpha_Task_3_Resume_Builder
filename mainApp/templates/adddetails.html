@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Add_Details</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid w-100 my-3">
+    <div class="w-75 m-auto mid-section">
+        <h5 class="text-light bg-dark text-center p-1"><span
+                style="color: blueviolet; border-bottom: 2px solid blueviolet;">Add</span> Details</h5>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="Full Name" class="form-control" required>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label>DOB</label>
+                    <input type="date" name="dob" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label>Gender</label>
+                    <select name="gender" class="form-control" required>
+                        <option value="">----Select----</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label>Locality</label>
+                    <input type="text" name="locality" class="form-control" placeholder="Locality" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="city" class="form-control" required>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label>State</label>
+                    <input type="text" name="state" placeholder="state" class="form-control" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label>Pin</label>
+                    <input type="text" name="pin" placeholder="Pin" class="form-control" required maxlength="7">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label>Mobile</label>
+                    <input type="text" name="mobile" placeholder="Mobile" class="form-control" required maxlength="11">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Image</label>
+                <input type="file">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark w-100 text-light">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

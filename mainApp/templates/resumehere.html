@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Resume | Here</title>
+{% endblock %}
+
+{% block body %}
+{% if data %}
+<div class="container mt-5 bg-dark text-white border-3 rounded-2">
+    <div class="row ms-2 ms-2 pt-3">
+        <div class="mb-2 col-md-6">
+            <h5>Name:</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.name}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>DOB:</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.dob}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>Gender</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.gender}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>Locality</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.locality}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>City</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.city}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>State</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.state}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>Pin:</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.pin}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>Mobile:</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.mobile}}</h5>
+        </div>
+    </div>
+    <div class="row ms-2">
+        <div class="mb-2 col-md-6">
+            <h5>Email:</h5>
+        </div>
+        <div class="mb-2 col-md-6">
+            <h5>{{data.email}}</h5>
+        </div>
+    </div>
+</div>
+{% else %}
+<p>No data found.</p>
+{% endif %}
+{% endblock %}
